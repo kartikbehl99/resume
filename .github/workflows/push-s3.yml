@@ -31,7 +31,7 @@ jobs:
       - name: Run a multi-line script
         run: |
           sudo apt-get install texlive texlive-latex-extra        
-          pdflatex ./src/main.tex
+          xelatex ./src/main.tex
           aws s3 cp main.pdf s3://resume-kartik-behl/Kartik-Behl.pdf
           aws s3api put-object-acl --bucket resume-kartik-behl --key Kartik-Behl.pdf --acl public-read 
       
