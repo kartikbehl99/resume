@@ -1,324 +1,132 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Deedy - One Page Two Column Resume
-% LaTeX Template
-% Version 1.3 (22/9/2018)
-%
-% Original author:
-% Debarghya Das (http://debarghyadas.com)
-%
-% Original repository:
-% https://github.com/deedydas/Deedy-Resume
-%
-% v1.3 author:
-% Zachary Taylor
-%
-% v1.3 repository:
-% https://github.com/ZDTaylor/Deedy-Resume
-%
-% IMPORTANT: THIS TEMPLATE NEEDS TO BE COMPILED WITH XeLaTeX
-%
-% This template uses several fonts not included with Windows/Linux by
-% default. If you get compilation errors saying a font is missing, find the line
-% on which the font is used and either change it to a font included with your
-% operating system or comment the line out to use the default font.
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% TODO:
-% 1. Add various styling and section options and allow for multiple pages smoothly.
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% CHANGELOG:
-% v1.3:
-% 1. Removed MacFonts version as I have no desire to maintain it nor access to macOS
-% 2. Switched column ordering
-% 3. Changed font styles/colors for easier human readability
-% 4. Added, removed, and rearranged sections to reflect my own experience
-% 5. Hid last updated
-%
-% v1.2:
-% 1. Added publications in place of societies.
-% 2. Collapsed a portion of education.
-% 3. Fixed a bug with alignment of overflowing long last updated dates on the top right.
-%
-% v1.1:
-% 1. Fixed several compilation bugs with \renewcommand
-% 2. Got Open-source fonts (Windows/Linux support)
-% 3. Added Last Updated
-% 4. Move Title styling into .sty
-% 5. Commented .sty file.
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% Known Issues:
-% 1. Overflows onto second page if any column's contents are more than the vertical limit
-% 2. Hacky space on the first bullet point on the second column.
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% CV Bruno Alves 06/2017 %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\PassOptionsToPackage{dvipsnames}{xcolor}
+\documentclass[10pt,a4paper]{main}
 
-\documentclass[]{main}
-\usepackage{fancyhdr}
+%Layout
+\geometry{left=1cm,right=9cm,marginparwidth=6.8cm,marginparsep=1.2cm,top=1.25cm,bottom=1.25cm,footskip=2\baselineskip}
 
-\pagestyle{fancy}
-\fancyhf{}
+%Packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[default]{lato}
+\usepackage{hyperref}
+
+%Colors
+
+\definecolor{accent}{HTML}{000e17}
+\definecolor{heading}{HTML}{000e17}
+\definecolor{emphasis}{HTML}{696969}
+\definecolor{body}{HTML}{01415f}
+
+\colorlet{heading}{heading}
+\colorlet{accent}{accent}
+\colorlet{emphasis}{emphasis}
+\colorlet{body}{body}
+
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%
 
 \begin{document}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-%     LAST UPDATED DATE
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \lastupdated
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-%     TITLE NAME
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\namesection{Kartik Behl}{ %\urlstyle{same}\href{http://example.com}{example.com}| \href{http://example2.co}{example2.co}\\
-\href{mailto:kartikbehl99@gmail.com}{kartikbehl99@gmail.com} | \href{tel:9990290880}{9990290880} | \href{https://www.linkedin.com/in/kartik-behl-b46a3484/}{LinkedIn} | \href{https:github.com/kartikbehl99}{GitHub}
+\name{Kartik Behl}
+\tagline{}
+\personalinfo{
+  \email{\href{mailto:kartikbehl99@gmail.com}{kartikbehl99@gmail.com}}
+  \phone{\href{tel:9990290880}{+91 9990290880}}
+  \linkedin{\href{https://www.linkedin.com/in/kartik-behl-b46a3484/}{kartikbehl99}}
+  \github{\href{https:github.com/kartikbehl99}{kartikbehl99}}
 }
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-%     COLUMN ONE
+
+\begin{fullwidth}
+\makecvheader
+\end{fullwidth}
+
 %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{minipage}[t]{0.60\textwidth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Experience %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     EXPERIENCE
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cvsection[page1sidebar]{Experience}
 
-\section{Experience}
-\runsubsection{Coding Ninjas}
-\descript{| Software Engineer Intern }
-\location{July 2020 – Present | New Delhi}
-\vspace{\topsep} % Hacky fix for awkward extra vertical space
-\begin{tightemize}
-\item Working as a full stack developer, using Ruby on Rails and Angular for development.
-\item Develop End-to-End features for the product.
-\item Fixing bugs in production.
-\end{tightemize}
-\sectionsep
+%%%%%%%%%%%%%
+%Experience 1
+%%%%%%%%%%%%%
 
-\runsubsection{OpsLyft}
-\descript{| Software Engineer Intern }
-\location{June 2019 – June 2020 | Noida, UP}
-\begin{tightemize}
-\item Developed and optimized the backend of the product.
-\item Automated deployment process using ansible.
-\item Designed scalable architecture on AWS and worked with various AWS services including but not limited
-to: RDS, Redshift, S3, EC2, Lambda, CloudFormation etc.
-\item Developed tech products for marketing team such as Sales navigator scraper, Crunchbase scraper and Bulk email sender.
-\end{tightemize}
-\sectionsep
+\cvevent{Software Engineer Intern}{Coding Ninjas}{July 2020 -- Present}{New Delhi, India}
 
-\runsubsection{Coding Ninjas}
-\descript{| Teaching Assistant }
-\location{January 2018 – April 2018 | New Delhi}
-\begin{tightemize}
-\item Worked as a TA for Data structures and Algorithms.
-\end{tightemize}
-\sectionsep
+\begin{itemize}
+	\item Working as a full stack developer, using Ruby on Rails and Angular for development.
+    \item Develop End-to-End features for the product.
+    \item Fixing bugs in production.
+\end{itemize}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     PROJECTS
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Projects}
-\runsubsection{SSH Key Manager}
-\descript{| Personal Project}
-\location{April 2020 – Present}
-\begin{tightemize}
-\item It is a CLI tool for managing SSH keys of an organization and SSH to the server. It encrypts all the keys with a password known to the user only and isn't stored any where else.
-\item The tool also allows controlling who has access to a particular SSH key.
-\item Technologies: Python, Flask, AWS EC2, AWS DynamoDB, SSH, Ansible.
-\end{tightemize}
-\sectionsep
-
-\runsubsection{AWS Cost Dashboard}
-\descript{| Developed at OpsLyft}
-\location{March 2020 – June 2020}
-\begin{tightemize}
-\item AWS Cost Dashboard is aimed at providing real time cost analytics and usage of various AWS services namely ECS, EC2, RDS, Lambda, S3, Dynamodb.
-\item The dashboard refreshes itself every 5 minutes and calculated the cost incurred on AWS based on the new usage patterns. It also shows various real time usage statistics such as CPU Utilisation, Memory Utilisation, Volume used etc.
-\item Technologies: Python, Flask, ReactJs, AWS(EC2, Redshift, S3, Lambda, CloudFormation etc.), boto3.
-\end{tightemize}
-\sectionsep
-
-\runsubsection{OpsSpike}
-\descript{| Developed at OpsLyft}
-\location{June 2019 – December 2019}
-\begin{tightemize}
-\item OpsSpike is a cloud management and cost optimization platform.
-\item It provides cost analytics of your cloud infrastructure. It also provides automation of various cloud workflows such as rightsizing EC2 instances, terminating idle resources, Alerts etc.
-\item Technologies: Python, Flask, ReactJs, AWS(EC2, Athena, Redshift, S3, Lambda, CloudFormation etc.), boto3.
-\end{tightemize}
-\sectionsep
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     RESEARCH
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \section{Research}
-% \runsubsection{Cornell Robot Learning Lab}
-% \descript{| Researcher}
-% \location{Jan 2014 – Jan 2015 | Ithaca, NY}
-% Worked with \textbf{\href{http://www.cs.cornell.edu/~ashesh/}{Ashesh Jain}} and \textbf{\href{http://www.cs.cornell.edu/~asaxena/}{Prof Ashutosh Saxena}} to create \textbf{PlanIt}, a tool which  learns from large scale user preference feedback to plan robot trajectories in human environments.
-% \sectionsep
-
-% \runsubsection{Cornell Phonetics Lab}
-% \descript{| Head Undergraduate Researcher}
-% \location{Mar 2012 – May 2013 | Ithaca, NY}
-% Led the development of \textbf{QuickTongue}, the first ever breakthrough tongue-controlled game with \textbf{\href{http://conf.ling.cornell.edu/~tilsen/}{Prof Sam Tilsen}} to aid in Linguistics research.
-% \sectionsep
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     COMMUNITY SERVICE
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \section{Community Service}
-
-% \begin{tabular}{rll}
-% 2013 -- 2018    & Tennessee     & St. Baldrick's Foundation\\
-% 2014 -- 2017	& Tennessee     & American Cancer Society's Hope Lodge\\
-% 2013 -- 2015    & Tennessee     & Habitat for Humanity\\
-% 2011 -- 2015    & Tennessee     & Special Olympics\\
-% \end{tabular}
-% \sectionsep
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     SOCIETIES
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \section{Societies}
-
-% \begin{tabular}{rll}
-% 2018 -- 2018    & National      & Association of Computing Machinery (ACM)\\
-% 2017 -- 2019	& National      & Scrum Alliance Certified ScrumMaster\\
-% 2015 -- 2019    & University    & Shackouls Honors College\\
-% \end{tabular}
-% \sectionsep
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     AWARDS
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \section{Awards}
-% \begin{tabular}{rll}
-% 2015        & 99\textsuperscript{th} percentile & National Merit Scholarship Finalist\\
-% \end{tabular}
-% \sectionsep
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     PUBLICATIONS
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \section{Publications}
-% \renewcommand\refname{\vskip -1.5cm} % Couldn't get this working from the .cls file
-% \bibliographystyle{abbrv}
-% \bibliography{publications}
-% \nocite{*}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\divider
 %
-%     COLUMN TWO
+
+%%%%%%%%%%%%%
+%Experience 2
+%%%%%%%%%%%%%
+
+\cvevent{Software Engineern Intern}{OpsLyft}{June 2019 -- June 2020}{Noida, India}
+
+\begin{itemize}
+  \item Developed and optimized the backend of the product.
+    \item Automated deployment process using ansible.
+    \item Designed scalable architecture on AWS and worked with various AWS services.
+    \item Developed tech products for marketing team such as Sales navigator scraper, Crunchbase scraper and Bulk email sender.
+\end{itemize}
+
+\divider
 %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.33\textwidth}
+%%%%%%%%%%%%%
+%Experience 3
+%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     EDUCATION
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cvevent{Teaching Assistant}{Coding Ninjas}{January 2018 -- April 2018}{New Delhi, India}
 
-\section{Education}
+\begin{itemize}
+  \item Worked as a TA for Data structures and Algorithms.
+\end{itemize}
 
-\subsection{Maharaja Agrasen Institute of Technology}
-\descript{Bachelor of Technology in Infomration Technology}
-\location{Expected June 2021 | New Delhi, India}
-% College of Engineering \\
-\location{ GPA: 8.60 / 10.0}
-\sectionsep
+\medskip
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     SKILLS
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Projects %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Skills}
-\subsection{Languages}
-\textbullet{} Python \\ 
-\textbullet{} C++ \\
-\textbullet{} JavaScript \\
-\textbullet{} Ruby \\
-\sectionsep
+\cvsection{Projects}
 
-\subsection{Frameworks}
-\textbullet{} Flask \\
-\textbullet{} Angular \\
-\textbullet{} Ruby on Rails \\
-\sectionsep
+%%%%%%%%%%%%%
+%Project 1
+%%%%%%%%%%%%%
 
-\subsection{Database}
-\textbullet{} PostgreSQL \\
-\textbullet{} MySQL \\
-\textbullet{} DynamoDB \\
-\sectionsep
+\cveventproject{SSH Key Manager}{Personal Project}{April 2020 -- Present}
 
-\subsection{Tools and Technologies}
-\textbullet{} Git/GitHub \\
-\textbullet{} AWS \\
-\textbullet{} Selenium \\
-\textbullet{} Ansible \\
-\textbullet{} HTML \\
-\textbullet{} CSS \\
-\sectionsep
+\begin{itemize}
+    \item It is a CLI tool for managing SSH keys of an organization and SSH to the server. It encrypts all the keys with a password known to the user only and isn't stored any where else. The tool also allows controlling who has access to a particular SSH key.
+    \item Technologies: Flask, AWS EC2, AWS DynamoDB, SSH, Ansible.
+\end{itemize}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     COURSEWORK
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\divider
 
-% \section{Coursework}
-% \subsection{Graduate}
-% Analysis of Algorithms
-% \sectionsep
+%
 
-% \subsection{Undergraduate}
-% Artificial Intelligence \\
-% {\footnotesize \textit{\textbf{(Teaching Assistant) }}} \\
-% AI Robotics \\
-% Operating Systems I \\
-% Calculus I-IV \\
-% Data Analysis I \\
-% Introduction to Probability \\
-% \sectionsep
+%%%%%%%%%%%%%
+%Project 2
+%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     Societies
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cveventproject{AWS Cost Dashboard}{Developed at OpsLyft}{March 2020 -- June 2020}
 
-\section{Certificates}
-AWS Fundamentals and building Serverless Applications(Coursera)\\
-Data Structures and Algorithms(Coding Ninjas)\\
-Full stack Web Development(Coding Blocks)\\
-National Merit Scholarship Finalist \\
-\sectionsep
+\begin{itemize}
+    \item AWS Cost Dashboard is aimed at providing near real time cost analytics and usage of various AWS services namely ECS, EC2, RDS, Lambda, S3, Dynamodb.
+    \item It also shows various real time usage statistics such as CPU Utilisation, Memory Utilisation, Volume used etc.
+    \item Technologies: Python, Flask, ReactJs, AWS(EC2, Redshift, S3, Lambda, CloudFormation etc.), boto3.
+\end{itemize}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     LINKS
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
 
-\section{Links}
-Github:// \href{https://github.com/kartikbehl99}{\bf kartikbehl99} \\
-LinkedIn://  \href{https://www.linkedin.com/in/kartik-behl-b46a3484/}{\bf kartikbehl99} \\
-\sectionsep
-
-\end{minipage}
-\end{document}  \documentclass[]{article}
+\end{document}
