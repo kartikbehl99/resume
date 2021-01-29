@@ -1,0 +1,118 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% resume - one page, one column
+% XeLaTeX Template
+% Version 1.1 (09.05.2017)
+%
+% Author: knyte (https://github.com/knyte)
+%
+% Repository: https://github.com/knyte/resume
+%
+% This template is primarily designed for
+% undergraduate EE/CE/CS students applying for
+% industry roles in software engineering
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[]{resume-knyte}
+ 
+\begin{document}
+
+%%%%%%%%%
+% HEADER
+%%%%%%%%%
+
+% \makeheader{title/name}
+\makeheader{Kartik Behl}
+
+%%%%%%%%%%%%
+% SUBHEADER
+%%%%%%%%%%%%
+
+% argument to environment should match number of sites
+\begin{subheader}{1}
+    % leave third argument empty to specify no hyperlink
+    \site{E-Mail}{kartikbehl99@gmail.com}{mailto:kartikbehl99@gmail.com}
+    \site{Phone}{9990290880}{tel:9990290880}
+    \site{LinkedIn}{kartikbehl99}{https://www.linkedin.com/in/kartik-b-b46a3484/}
+    \site{GitHub}{kartikbehl99}{https://github.com/kartikbehl99} ~\\
+\end{subheader}
+
+%%%%%%%%%
+% SKILLS
+%%%%%%%%%
+\begin{topic}{Skills}
+    % \skillset{category}{members}
+    \skillset{Languages}{Python, C++, JavaScript, Ruby}
+    \skillset{Frameworks}{Flask, Angular, Ruby on Rails}
+    \skillset{Database}{PostgreSQL, MySQL, DynamoDB, MongoDB}
+    \skillset{Tools and Technologies}{Git, AWS, Selenium, Ansible, HTML, CSS}
+    \skillset{Other skills}{Data Structures, Algorithms, OO Design, SQL, System Design, Cloud Computing}
+    
+    ~\\ % hardcoded due to entry spacing
+\end{topic}
+
+%%%%%%%%%%%%
+% EDUCATION
+%%%%%%%%%%%%
+\begin{topic}{Education}
+    % \entry{institution}{dates}{subtitle}{description}
+    \entry{Maharaja Agrasen Institute of Technology}{2017-2021}
+    {Bachelor of Technology - Information Technology | CGPA: 8.7/10.0}
+    {}
+\end{topic}
+
+%%%%%%%%%%%%%
+% EXPERIENCE
+%%%%%%%%%%%%%
+\begin{topic}{Experience}
+    % \entry{role}{dates}{team/company}{description}
+    \entry{Software Engineer - Internship}{2020 - Present}
+    {Coding Ninjas}
+    {\begin{tightitemize}
+        \item Worked as a full-stack developer and developed end-to-end features using Angular and Ruby on Rails.
+        \item Developed sophisticated \href{https://www.codingninjas.com/courses/premium-foundation-course}{web pages} and created APIs for the same.
+        \item Significantly reduced API response time by caching the results and optimizing database queries.
+        \item Owned the system for automating the process of certificate generation and distribution.
+    \end{tightitemize}}
+    \entry{Software Engineer - Internship}{2019 - 2020}
+    {OpsLyft}
+    {\begin{tightitemize}
+        \item Primarily worked as a backend developer.
+        \item Developed the backend of the product from scratch and achieved the MVP state in a span of 3 months.
+        \item Deployed the backend on AWS by automating the entire process using Ansible. The AWS services used were: EC2, Redshift, DynamoDB, ELB, S3, Lambda, API Gateway, SNS and Athena.
+        \item Developed tech products for marketing teams as well such as: Sales navigator scraper, Crunchbase scraper etc. This helped in automating the entire process of sales and lead generation thereby saving a lot of effort.
+    \end{tightitemize}}
+\end{topic}
+
+%%%%%%%%%%%
+% PROJECTS
+%%%%%%%%%%%
+\begin{topic}{Projects}
+    % \entry{name}{dates}{tools used}{description}
+    \entry{SSH Manager}{\href{https://github.com/kartikbehl99/ssh-manager-backend}{Code}}
+    {Technologies: Flask, AWS EC2, AWS DynamoDB, SSH, Ansible.}
+    {\begin{tightitemize}
+        \item It is a CLI tool for managing SSH keys of an organizaon and SSH to the server.
+        \item It encrypts all the keys with a password known to the user only and isn’t stored any where else.
+        \item The tool also allows controlling who has access to a particular SSH key.(This project isn't deployed anywhere because it requires a dedicated infrastructure on cloud)
+    \end{tightitemize}}
+    \entry{URL Shortener}{\href{https://github.com/kartikbehl99/URL-shortener-public}{Code} | \href{https://smol.ga}{Demo}}
+    {Technologies: Angular, Flask, Nginx, MongoDB, EC2}
+    {\begin{tightitemize}
+        \item A URL shortener capable of generating ~3 trillion unique URLs without the need of checking for collisions
+    \end{tightitemize}}
+    \entry{Automated user behaviour mapping}{\href{https://github.com/kartikbehl99/automated-user-behaviour-mapping}{Code}}
+    {Technologies: Python, SocketIO, JavaScript, Selenium}
+    {\begin{tightitemize}
+        \item A javascript and python based app which records all the actions performed by a user on a website in real time \item It then let’s you see how the user operated the website/webpage by replicating the actions in a browser window.
+        \item The process of replication is entirely automated using Selenium.
+    \end{tightitemize}}
+    \entry{AWS Cost Dashboard | Developed at OpsLyft}{\href{https://grafana.opslyft.com}{Demo (Contact me for credentials)}}
+    {Technologies: Python, Flask, ReactJs, AWS(EC2, Redshift, Lambda, SNS, S3, Athena, CloudFormation etc}
+    {\begin{tightitemize}
+        \item AWS Cost Dashboard is aimed at providing near real time cost analytics and usage of various AWS services.
+        \item It also shows various real time usage statistics such as CPU Utilization, Memory Utilization, Volume used etc.
+    \end{tightitemize}}
+\end{topic}
+
+\end{document}
