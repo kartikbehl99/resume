@@ -1,128 +1,226 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% resume - one page, one column
-% XeLaTeX Template
-% Version 1.1 (09.05.2017)
-%
-% Author: knyte (https://github.com/knyte)
-%
-% Repository: https://github.com/knyte/resume
-%
-% This template is primarily designed for
-% undergraduate EE/CE/CS students applying for
-% industry roles in software engineering
-% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
 
-\documentclass[]{resume-knyte}
- 
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+\hypersetup{%
+  colorlinks=true,% hyperlinks will be coloured
+}
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 \begin{document}
 
-%%%%%%%%%
-% HEADER
-%%%%%%%%%
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
 
-% \makeheader{title/name}
-\makeheader{Kartik Behl}
+\begin{center}
+    \textbf{\Huge \scshape Kartik Behl} \\ \vspace{1pt}
+    \small \href{tel:9990290880}{+91-9990290880} $|$ \href{mailto:kartikbehl99@gmail.com}{\underline{kartikbehl99@gmail.com}} $|$ 
+    \href{https://www.linkedin.com/in/kartik-b-b46a3484/}{\underline{LinkedIn}} $|$
+    \href{https://github.com/kartikbehl99}{\underline{GitHub}}
+\end{center}
 
-%%%%%%%%%%%%
-% SUBHEADER
-%%%%%%%%%%%%
 
-% argument to environment should match number of sites
-\begin{subheader}{1}
-    % leave third argument empty to specify no hyperlink
-    \site{E-Mail}{kartikbehl99@gmail.com}{mailto:kartikbehl99@gmail.com}
-    \site{Phone}{9990290880}{tel:9990290880}
-    \site{LinkedIn}{kartikbehl99}{https://www.linkedin.com/in/kartik-b-b46a3484/}
-    \site{GitHub}{kartikbehl99}{https://github.com/kartikbehl99} ~\\
-\end{subheader}
+%-----------SUMMARY-----------
+\section{Summary}
+\resumeSubHeadingListStart
+\resumeItem{A creative and detailed individual with ability to develop effective and efficient solutions with zero tolerance for errors. Looking forward to fully harness my technical skills.}
+\resumeSubHeadingListEnd
 
-%%%%%%%%%
-% SUMMARY
-%%%%%%%%%
-\begin{topic}{Summary}
-  \>\
-  \begin{minipage}{\desctab}
-    \content{A creative and detailed individual with ability to develop effective and efficient solutions with zero tolerance for errors. Looking forward to fully harness my technical skills.}
-  \end{minipage}\\\\
-\end{topic}
 
-%%%%%%%%%
-% SKILLS
-%%%%%%%%%
-\begin{topic}{Skills}
-    % \skillset{category}{members}
-    \skillset{Languages}{Python, C++, JavaScript, Ruby, SQL, HTML}
-    \skillset{Frameworks}{Flask, Angular, Ruby on Rails}
-    \skillset{Database}{PostgreSQL, MySQL, DynamoDB, MongoDB}
-    \skillset{Tools and Technologies}{Git, AWS, Selenium, Ansible, CSS}
-    \skillset{Other skills}{Data Structures, Algorithms, OO Design, System Design, Cloud Computing}
-    
-    ~\\ % hardcoded due to entry spacing
-\end{topic}
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Maharaja Agrasen Institute of Technology}{Delhi, India}
+      {Bachelor of Technology, Information Technology, CGPA: 8.7/10.0}{2017 - 2021}
+  \resumeSubHeadingListEnd
 
-%%%%%%%%%%%%
-% EDUCATION
-%%%%%%%%%%%%
-\begin{topic}{Education}
-    % \entry{institution}{dates}{subtitle}{description}
-    \entry{Maharaja Agrasen Institute of Technology}{2017-2021}
-    {Bachelor of Technology - Information Technology | CGPA: 8.7/10.0}
-    {}
-\end{topic}
 
-%%%%%%%%%%%%%
-% EXPERIENCE
-%%%%%%%%%%%%%
-\begin{topic}{Experience}
-    % \entry{role}{dates}{team/company}{description}
-    \entry{Software Engineer}{July 2020 - Present}
-    {Coding Ninjas}
-    {\begin{tightitemize}
-        \item Work as a full-stack developer and develop end-to-end features using Angular and Rails.
-        \item Develop sophisticated \href{https://www.codingninjas.com/courses/premium-foundation-course}{web pages} and created APIs for the same.
-        \item Significantly reduced API response time by caching the results and optimizing database queries.
-        \item Developed and own the system for automating the process of certificate generation and distribution.
-    \end{tightitemize}}
-    \entry{Software Engineer}{June 2019 - June 2020}
-    {OpsLyft}
-    {\begin{tightitemize}
-        \item Conceived and built the first version of the product, used CUR reports with AWS Athena toprovide customised dashboards to our customers with 1-click integration via CFN templates.
-        \item Developed the backend of the product from scratch and achieved the MVP state in a span of 3 months.
-        \item Built features like RI rightsizing, Idle resources monitoring, AWS Well-architected framework suggestions into the product.
-        \item Developed marketing tech products which added automation in sales and lead generation.\\
-    \end{tightitemize}}
-\end{topic}
+%-----------EXPERIENCE-----------
+\section{Professional Experience}
+  \resumeSubHeadingListStart
 
-%%%%%%%%%%%
-% PROJECTS
-%%%%%%%%%%%
-\begin{topic}{Projects}
-    % \entry{name}{dates}{tools used}{description}
-    \entry{SSH Manager}{\href{https://github.com/kartikbehl99/ssh-manager-backend}{Code}}
-    {Technologies: Flask, AWS EC2, AWS DynamoDB, SSH, Ansible.}
-    {\begin{tightitemize}
-        \item It is a CLI tool for managing SSH keys of an organizaon and SSH to the server.
-        \item It encrypts all the keys with a password known to the user only and isn’t stored any where else.
-        \item The tool also allows controlling who has access to a particular SSH key.(This project isn't deployed anywhere because it requires a dedicated infrastructure on cloud)
-    \end{tightitemize}}
-    \entry{URL Shortener}{\href{https://github.com/kartikbehl99/URL-shortener-public}{Code} | \href{https://smol.ga}{Demo}}
-    {Technologies: Angular, Flask, Nginx, MongoDB, EC2}
-    {\begin{tightitemize}
-        \item A URL shortener capable of generating ~3 trillion unique URLs without the need of checking for collisions.
-    \end{tightitemize}}
-    \entry{Automated user behaviour mapping}{\href{https://github.com/kartikbehl99/automated-user-behaviour-mapping}{Code}}
-    {Technologies: Python, SocketIO, JavaScript, Selenium}
-    {\begin{tightitemize}
-        \item A javascript and python based app which records all the actions performed by a user on a website in real time \item It then let’s you see how the user operated the website/webpage by replicating the actions in a browser window.
-        \item The process of replication is entirely automated using Selenium.
-    \end{tightitemize}}
-    \entry{AWS Cost Dashboard | Developed at OpsLyft}{\href{https://grafana.opslyft.com}{Demo (Contact me for credentials)}}
-    {Technologies: Python, Flask, ReactJs, AWS(EC2, Redshift, Lambda, SNS, S3, Athena, CloudFormation etc}
-    {\begin{tightitemize}
-        \item AWS Cost Dashboard is aimed at providing near real time cost analytics and usage of various AWS services.
-        \item It also shows various real time usage statistics such as CPU Utilization, Memory Utilization, Volume used etc.
-    \end{tightitemize}}
-\end{topic}
+    \resumeSubheading
+      {Software Engineer}{July 2020 -- Present}
+      {Coding Ninjas}{}
+      \resumeItemListStart
+        \resumeItem{Work as a full-stack developer and develop end-to-end features using Angular and Rails.}
+        \resumeItem{Develop sophisticated \href{https://www.codingninjas.com/courses/premium-foundation-course}{web pages} and create APIs for the same.}
+        \resumeItem{Significantly reduced API response time by caching the results and optimizing database queries.}
+        \resumeItem{Developed and own the system for automating the process of certificate generation and distribution.}
+      \resumeItemListEnd
+      
+% -----------Multiple Positions Heading-----------
+%    \resumeSubSubheading
+%     {Software Engineer I}{Oct 2014 - Sep 2016}
+%     \resumeItemListStart
+%        \resumeItem{Apache Beam}
+%          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
+%     \resumeItemListEnd
+%    \resumeSubHeadingListEnd
+%-------------------------------------------
 
+    \resumeSubheading
+      {Software Engineer}{June 2019 -- June 2020}
+      {OpsLyft}{}
+      \resumeItemListStart
+        \resumeItem{Conceived and built the first version of the product, used CUR reports with AWS Athena to provide customised dashboards to our customers with 1-click integration via CFN templates.}
+        \resumeItem{Developed the backend of the product from scratch and achieved the MVP state in a span of 3 months.}
+        \resumeItem{Built features like RI rightsizing, Idle resources monitoring, AWS Well-architected framework suggestions into the product.}
+        \resumeItem{Developed marketing tech products which added automation in sales and lead generation.}
+    \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{SSH Manager} $|$ \emph{Flask, AWS EC2, DynamoDB, SSH, Ansible}}{\href{https://github.com/kartikbehl99/ssh-manager-backend}{Code}}
+          \resumeItemListStart
+            \resumeItem{A CLI tool for managing SSH keys of an organization and SSH to the server.}
+            \resumeItem{Encrypts all the keys with a password known to the user only and isn’t stored any where else.}
+            \resumeItem{Allows controlling who has access to a particular SSH key.(This project isn't deployed anywhere because it requires a dedicated infrastructure on cloud)}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{URL Shortener} $|$ \emph{Angular, Flask, Nginx, MongoDB, EC2}}{\href{https://github.com/kartikbehl99/URL-shortener-public}{Code} $|$ \href{https://smol.ga}{Demo}}
+          \resumeItemListStart
+            \resumeItem{A URL shortener capable of generating ~3 trillion unique URLs without the need of checking for collisions.}
+          \resumeItem{Implemented IP based rate limiting(1 second/request) to prevent exploitation of resources.}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Automated user behaviour mapping} $|$ \emph{Python, SocketIO, JavaScript, Selenium}}{\href{https://github.com/kartikbehl99/automated-user-behaviour-mapping}{Code}}
+          \resumeItemListStart
+            \resumeItem{A javascript and python based app which records all the actions performed by a user on a website in real-time.}
+            \resumeItem{It then shows how the user operated the website/webpage by replicating the actions in a browser window.}
+            \resumeItem{The replication process is entirely automated.}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{AWS Cost Dashboard $|$ Developed at OpsLyft}}{\href{https://grafana.opslyft.com}{Demo (Contact me for credentials)}}
+          \resumeItemListStart
+            \resumeItem{It is aimed at providing near real-time cost analytics and usage of various AWS services thereby providing 100\% visibility of cloud infrastructure}
+            \resumeItem{It also gives real-time insights about usage statistics such as CPU Utilization, Memory Utilization, Volume used etc which helps in granular level management of resources and saves thousands of dollars.}
+         \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Python, C++, JavaScript, Ruby, SQL, HTML, CSS} \\
+     \textbf{Frameworks}{: Flask, Angular, Ruby on Rails} \\
+     \textbf{Database}{: PostgreSQL, MySQL, DynamoDB, MongoDB} \\
+     \textbf{Tools and Technologies}{: Git, AWS, Selenium, Ansible} \\
+     \textbf{Other Skills}{: Data Structures, Algorithms, OO Design, System Design, Cloud Computing} \\
+    }}
+ \end{itemize}
+
+
+%-------------------------------------------
 \end{document}
