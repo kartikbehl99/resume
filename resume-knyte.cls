@@ -54,7 +54,7 @@
 \newcommand{\entryspace}{6pt}
 
 %%% labeltab
-\newcommand{\labeltab}{1.0in}
+\newcommand{\labeltab}{0.8in}
 
 %%% datetab
 \newcommand{\datetab}{6.2in}
