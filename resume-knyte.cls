@@ -54,7 +54,7 @@
 \newcommand{\entryspace}{6pt}
 
 %%% labeltab
-\newcommand{\labeltab}{1.5in}
+\newcommand{\labeltab}{1.0in}
 
 %%% datetab
 \newcommand{\datetab}{6.2in}
@@ -102,7 +102,7 @@
 \newcommand{\makeheader}[1]{
 	\centering{
 		\color{primary}
-		\fontsize{52pt}{65pt}
+		\fontsize{22pt}{35pt}
 		\fontspec[Path=resources/fonts/Muli/]{Muli-Bold}\selectfont #1
         \\[0.2ex]
 	}
